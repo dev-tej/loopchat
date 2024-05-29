@@ -1,25 +1,49 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ChitChat",
+  "name": "ChitChat",
+  "description": "Experience the joy of communication with ChitChat, your go-to social messaging app.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
+      "src": "ChitChat.jpg",
+      "type": "image/jpg",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "ChitChat.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "screenshots": [
+    {
+      "src": "ChitChat_ScreenShot_1.png",
+      "type": "image/png",
+      "sizes": "800x1734",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "ChitChat_ScreenShot_2.png",
+      "type": "image/png",
+      "sizes": "800x1734",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "ChitChat_ScreenShot_3.png",
+      "type": "image/png",
+      "sizes": "800x1734",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "ChitChat_ScreenShot_1.png",
+      "type": "image/png",
+      "sizes": "800x1734",
+      "form_factor": "wide"
+    }
+  ],
+  "start_url": "/",
+  "id": "/",
+  "orientation": "any",
+  "display": "fullscreen",
+  "theme_color": "#fdfdfd",
+  "background_color": "#fdfdfd"
 }

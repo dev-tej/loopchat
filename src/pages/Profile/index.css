@@ -1,0 +1,65 @@
+.profile-default-container {
+  width: 100%;
+  margin-top: 26px;
+  padding: 24px;
+}
+
+.profile-primary-stepper-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.profile-secondary-stepper-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-secondary-stepper-section img {
+  cursor: pointer;
+}
+
+.profile-primary-stepper-section h3,
+.profile-secondary-stepper-section h3 {
+  color: #9e9f9f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.3px;
+}
+
+.profile-default-container__header-section {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-default-container__form-section {
+  margin-top: 50px;
+}
+
+.profile-pic-upload-container {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dotted #dcdcdc;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.profile-pic-upload-container img {
+  margin-top: 24px;
+}

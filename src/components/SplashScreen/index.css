@@ -1,0 +1,52 @@
+.splash-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Keyframes for fading in and sliding up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling the animated text */
+.animated-text {
+  opacity: 0; /* Start with the text invisible */
+  animation: fadeInUp 1s ease-out forwards; /* Use the keyframes, duration, easing, and fill-mode */
+  font-size: 32px; /* Example font size, adjust as needed */
+  font-weight: bold; /* Example font weight, adjust as needed */
+  font-family: "Pacifico", cursive;
+  color: #333; /* Example text color, adjust as needed */
+  padding: 20px;
+}
+
+/* Styling the animated image */
+.animated-image {
+  opacity: 0; /* Start with the image invisible */
+  animation: fadeInDown 1s ease-out forwards; /* Use the keyframes, duration, easing, and fill-mode */
+  width: 100%; /* Adjust the width as needed, this makes the image responsive */
+  display: block; /* Removes bottom margin/gap */
+  max-width: 300px; /* Optional: limits the size of the image */
+  margin: 0 auto; /* Optional: centers the image horizontally */
+}

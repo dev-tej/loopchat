@@ -1,0 +1,49 @@
+.fixed-btn-section {
+  width: 100%;
+  max-width: 480px;
+  position: fixed;
+  bottom: 0;
+  padding: 24px;
+}
+
+.custom-btn {
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  border-radius: 100px;
+  background: var(--Brand-Color-Black, #303030);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.disabled-custom-btn {
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  border-radius: 100px;
+  background: var(--Brand-Color-Black, #303030);
+  border: none;
+  outline: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.custom-btn p,
+.disabled-custom-btn p {
+  color: var(--Neutral-Color-White, #fdfdfd);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.3px;
+}

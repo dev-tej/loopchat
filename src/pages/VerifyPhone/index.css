@@ -1,0 +1,34 @@
+.verify-phone-container {
+  width: 100%;
+  margin-top: 71px;
+  padding: 24px;
+}
+
+.verify-phone-container__header-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.verify-phone-container__info-section__region-container {
+  margin-top: 50px;
+  display: inline-flex;
+  width: 100%;
+  padding: 15px 20px;
+  align-items: flex-start;
+  gap: 15px;
+  border-radius: 100px;
+  border: 1.2px solid var(--Neutral-Color-Gray-Light, #dcdcdc);
+  margin-bottom: 20px;
+}
+
+.verify-phone-container__info-section__region-container h3 {
+  color: var(--Neutral-Color-Black, #303030);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}

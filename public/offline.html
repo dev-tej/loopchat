@@ -2,18 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="%PUBLIC_URL%/ChitChat.png" />
-    <meta property="og:image" content="%PUBLIC_URL%/ChitChat.png" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/ChitChat.jpg" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!-- possible content values: default, black or black-translucent -->
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="theme-color" content="#fdfdfd" />
+    <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Join ChitChat – the simple, fun way to stay connected with friends and family. Enjoy easy and fast messaging anytime, anywhere. Start chatting today!"
@@ -23,6 +15,8 @@
       property="og:description"
       content="Experience the joy of communication with ChitChat, your go-to social messaging app."
     />
+    <meta property="og:image" content="%PUBLIC_URL%/ChitChat.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/ChitChat.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,17 +31,13 @@
     <title>ChitChat</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("./serviceworker.js")
-            .then((reg) => console.log("Success: ", reg.scope))
-            .catch((err) => console.log("Failure: ", err));
-        });
-      }
-    </script>
+    <div className="container">
+      <h2 className="section">
+        <span>
+          Oops! You're offline. Please connect to the internet to see and send
+          messages.
+        </span>
+      </h2>
+    </div>
   </body>
 </html>

@@ -1,0 +1,47 @@
+.input-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 15px;
+}
+
+.custom-input {
+  width: 100%;
+  display: inline-flex;
+  padding: 15px 20px;
+  align-items: flex-start;
+  gap: 15px;
+  border-radius: 100px;
+  border: 1.2px solid var(--Brand-Color-Black, #303030);
+  color: var(--Neutral-Color-Black, #303030);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.custom-input-with-icon {
+  width: 100%;
+  display: inline-flex;
+  padding: 15px 20px 15px 50px;
+  align-items: flex-start;
+  gap: 15px;
+  border-radius: 100px;
+  border: 1.2px solid var(--Brand-Color-Black, #303030);
+  color: var(--Neutral-Color-Black, #303030);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.custom-input:focus,
+.custom-input-with-icon:focus {
+  outline: none;
+  border: 1.5px solid var(--Brand-Color-Black, #303030);
+}

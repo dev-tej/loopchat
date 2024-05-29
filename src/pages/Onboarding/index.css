@@ -1,0 +1,19 @@
+.onboarding-container {
+  width: 100%;
+  padding: 24px;
+  margin-top: 71px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.onboarding-container__illustration-section {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 46.3px;
+}
