@@ -1,6 +1,6 @@
-# ChitChat App
+# LoopChat App
 
-ChitChat is a real-time messaging application that allows users to send and receive messages instantly. The app is designed to provide a seamless chat experience with features like offline detection and message sending functionality.
+LoopChat is a real-time messaging application that allows users to send and receive messages instantly. The app is designed to provide a seamless chat experience with features like offline detection and message sending functionality.
 
 ## Features
 
@@ -20,10 +20,10 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 
 1. **Clone the repository:**
-   git clone https://github.com/your-username/chitchat-app.git
+   git clone https://github.com/your-username/loopchat.git
 
 2. **Navigate to the project directory:**
-   cd chitchat-app
+   cd loopchat
 
 3. **Install dependencies using Yarn:**
    yarn install
@@ -31,4 +31,3 @@ Before you begin, ensure you have met the following requirements:
 ## Start the Application
 
 - **yarn start**
-# chitchat-app

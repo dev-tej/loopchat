@@ -9,7 +9,7 @@ function SplashScreen() {
         className="animated-image"
         alt="SplashScreen"
       />
-      <div className="animated-text">ChitChat</div>
+      <div className="animated-text">LoopChat</div>
     </div>
   );
 }

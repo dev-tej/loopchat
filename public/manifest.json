@@ -1,7 +1,7 @@
 {
-  "short_name": "ChitChat",
-  "name": "ChitChat",
-  "description": "Experience the joy of communication with ChitChat, your go-to social messaging app.",
+  "short_name": "LoopChat",
+  "name": "LoopChat",
+  "description": "Experience the joy of communication with LoopChat, your go-to social messaging app.",
   "icons": [
     {
       "src": "ChitChat.jpg",

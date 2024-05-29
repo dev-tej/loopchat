@@ -1,4 +1,4 @@
-const CACHE_NAME = "chitchat-app";
+const CACHE_NAME = "loopchat";
 const urlsToCache = ["index.html", "offline.html"];
 
 const self = this;
