@@ -13,15 +13,10 @@ function Onboarding() {
         <h1 className="main-header">What's Up</h1>
         <div className="onboarding-container__illustration-section">
           <img src={Illustration} alt="Illustration" />
-          <h3 className="secondary-header">
-            Let's talk with your friends and family wherever and whenever
-          </h3>
+          <h3 className="secondary-header">Let's talk with your friends and family wherever and whenever</h3>
         </div>
       </div>
-      <CustomButton
-        text={"Continue with phone"}
-        onClick={() => navigate(ROUTES.VERIFY_PHONE)}
-      />
+      <CustomButton text={"Continue with phone"} onClick={() => navigate(ROUTES.VERIFY_PHONE)} />
     </>
   );
 }

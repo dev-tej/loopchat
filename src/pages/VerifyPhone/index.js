@@ -65,30 +65,17 @@ function RenderVerifyPhone() {
       <div className="verify-phone-container">
         <div className="verify-phone-container__header-section">
           <h1 className="primary-header">Enter your phone number</h1>
-          <h3 className="secondary-header">
-            Please confirm your region and enter your phone number.
-          </h3>
+          <h3 className="secondary-header">Please confirm your region and enter your phone number.</h3>
         </div>
         <div className="verify-phone-container__info-section">
           <div className="verify-phone-container__info-section__region-container">
             <img src={RegionIcon} alt="region-icon" />
             <h3>India(+91)</h3>
           </div>
-          <CustomInput
-            icon={PhoneIcon}
-            initialValue={""}
-            onInputChange={handleNumberChange}
-            inputMode="numeric"
-            pattern="[0-9]*"
-            maxLength={10}
-          />
+          <CustomInput icon={PhoneIcon} initialValue={""} onInputChange={handleNumberChange} inputMode="numeric" pattern="[0-9]*" maxLength={10} />
         </div>
       </div>
-      <CustomButton
-        text="Continue"
-        onClick={() => handleRequestOtp(number)}
-        disabled={number?.length < 10}
-      />
+      <CustomButton text="Continue" onClick={() => handleRequestOtp(number)} disabled={number?.length < 10} />
     </>
   );
 }

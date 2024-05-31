@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  PhoneAuthProvider,
-  signInWithCredential,
-  signInWithPhoneNumber,
-} from "firebase/auth";
+import { PhoneAuthProvider, signInWithCredential, signInWithPhoneNumber } from "firebase/auth";
 import OtpInput from "react-otp-input";
 import * as ROUTES from "constants/routes";
 import useAuth from "hooks/useAuth";
@@ -37,10 +33,13 @@ function RenderVerifyOtp() {
 
   useEffect(() => {
     if (otp?.length === 6) {
+      console.log("OTP entered", otp);
       handleVerifyOTP();
+    } else {
+      console.log("OTP not entered");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [otp]);
 
   // Handle Request OTP
   const handleRequestOtp = () => {
@@ -100,26 +99,12 @@ function RenderVerifyOtp() {
           </h3>
         </div>
         <div className="verify-otp-container__otp-section">
-          <OtpInput
-            value={otp}
-            onChange={setOtp}
-            numInputs={6}
-            renderSeparator={<span>&nbsp;</span>}
-            renderInput={(props) => (
-              <input
-                {...props}
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-              />
-            )}
-          />
+          <OtpInput value={otp} onChange={setOtp} numInputs={6} renderSeparator={<span>&nbsp;</span>} renderInput={(props) => <input {...props} type="text" inputMode="numeric" pattern="[0-9]*" />} />
         </div>
       </div>
       <div className="verify-otp__resend-code-container">
         <p className="verify-otp__resend-code-container__helper-text">
-          Didn’t get the code?{" "}
-          <span onClick={() => handleRequestOtp()}>Resend code</span>
+          Didn’t get the code? <span onClick={() => handleRequestOtp()}>Resend code</span>
         </p>
       </div>
     </>

@@ -3,13 +3,7 @@ import PropTypes from "prop-types";
 import useInput from "hooks/useInput";
 import "./index.css";
 
-const CustomInput = ({
-  icon: Icon,
-  placeholder,
-  initialValue,
-  onInputChange,
-  ...rest
-}) => {
+const CustomInput = ({ icon: Icon, placeholder, initialValue, onInputChange, ...rest }) => {
   const inputProps = useInput(initialValue);
 
   useEffect(() => {
@@ -19,13 +13,7 @@ const CustomInput = ({
   return (
     <div className="input-container">
       {Icon && <Icon className="icon" />}
-      <input
-        type="text"
-        placeholder={placeholder}
-        {...inputProps}
-        {...rest}
-        className={Icon ? "custom-input-with-icon" : "custom-input"}
-      />
+      <input type="text" placeholder={placeholder} {...inputProps} {...rest} className={Icon ? "custom-input-with-icon" : "custom-input"} />
     </div>
   );
 };

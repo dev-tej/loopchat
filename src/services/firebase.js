@@ -29,22 +29,15 @@ const firestore = getFirestore(app);
 // Initialize Recaptcha Verifier
 const initializeRecaptchaVerifier = () => {
   if (!window.recaptchaVerifier) {
-    window.recaptchaVerifier = new RecaptchaVerifier(
-      auth,
-      "recaptcha-container",
-      {
-        size: "invisible",
-        callback: (response) => {
-          console.log(
-            "reCAPTCHA solved, allow signInWithPhoneNumber.",
-            response
-          );
-        },
-        "expired-callback": () => {
-          console.log("reCAPTCHA expired, please solve it again.");
-        },
-      }
-    );
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+      size: "invisible",
+      callback: (response) => {
+        console.log("reCAPTCHA solved, allow signInWithPhoneNumber.", response);
+      },
+      "expired-callback": () => {
+        console.log("reCAPTCHA expired, please solve it again.");
+      },
+    });
   }
   return window.recaptchaVerifier;
 };

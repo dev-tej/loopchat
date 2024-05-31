@@ -22,23 +22,13 @@ function AddName() {
         </div>
         <div className="profile-default-container__header-section">
           <h1 className="primary-header">Create your name</h1>
-          <h3 className="secondary-header">
-            Get more people to know your name.
-          </h3>
+          <h3 className="secondary-header">Get more people to know your name.</h3>
         </div>
         <div className="profile-default-container__form-section">
-          <CustomInput
-            icon={UserIcon}
-            initialValue={""}
-            onInputChange={handleNameChange}
-          />
+          <CustomInput icon={UserIcon} initialValue={""} onInputChange={handleNameChange} />
         </div>
       </div>
-      <CustomButton
-        onClick={() => navigate(ROUTES.UPLOAD_PROFILE_PIC)}
-        text={"Continue"}
-        disabled={name?.length === 0}
-      />
+      <CustomButton onClick={() => navigate(ROUTES.UPLOAD_PROFILE_PIC)} text={"Continue"} disabled={name?.length === 0} />
     </>
   );
 }

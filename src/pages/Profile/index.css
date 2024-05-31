@@ -55,11 +55,16 @@
   justify-content: center;
   align-items: center;
   border: 2px dotted #dcdcdc;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   cursor: pointer;
 }
 
-.profile-pic-upload-container img {
+.camera-pic {
   margin-top: 24px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
 }
