@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithPhoneNumber } from "firebase/auth";
+import { Toaster } from "react-hot-toast";
 import * as ROUTES from "constants/routes";
 import { auth, initializeRecaptchaVerifier } from "services/firebase";
+import useToast from "hooks/useToast";
 import CustomInput from "components/CustomInput";
 import CustomButton from "components/CustomButton";
 import CustomSpinner from "components/CustomSpinner";
@@ -25,6 +27,7 @@ function RenderVerifyPhone() {
   const [loading, setLoading] = useState(false);
   const [number, setNumber] = useState("");
   const navigate = useNavigate();
+  const { notify } = useToast();
 
   const handleNumberChange = (value) => {
     setNumber(value);
@@ -41,6 +44,7 @@ function RenderVerifyPhone() {
         .then((confirmationResult) => {
           console.log("OTP sent", confirmationResult?.verificationId);
           setLoading(false);
+          notify("OTP sent successfully", "success");
           navigate(ROUTES.VERIFY_OTP, {
             state: {
               verificationId: confirmationResult?.verificationId,
@@ -51,17 +55,20 @@ function RenderVerifyPhone() {
         .catch((error) => {
           console.error("OTP failed", error);
           setLoading(false);
+          notify("OTP failed", "error");
         });
     } catch (e) {
       console.error(e);
       setLoading(false);
+      notify("OTP failed", "error");
     }
   };
 
   return loading ? (
-    <CustomSpinner loading={loading} />
+    <CustomSpinner loading={loading} helperText={"Sending OTP..."} />
   ) : (
     <>
+      <Toaster position="top-center" />
       <div className="verify-phone-container">
         <div className="verify-phone-container__header-section">
           <h1 className="primary-header">Enter your phone number</h1>

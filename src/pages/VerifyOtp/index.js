@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PhoneAuthProvider, signInWithCredential, signInWithPhoneNumber } from "firebase/auth";
 import OtpInput from "react-otp-input";
+import { Toaster } from "react-hot-toast";
 import * as ROUTES from "constants/routes";
-import useAuth from "hooks/useAuth";
 import { auth, initializeRecaptchaVerifier } from "services/firebase";
+import useAuth from "hooks/useAuth";
+import useToast from "hooks/useToast";
 import { getMaskedPhoneNumber } from "utils";
 import CustomSpinner from "components/CustomSpinner";
 import "./index.css";
@@ -30,6 +32,7 @@ function RenderVerifyOtp() {
   const [loading, setLoading] = useState(false);
   const [otp, setOtp] = useState("");
   const { setToken, setUser } = useAuth();
+  const { notify } = useToast();
 
   useEffect(() => {
     if (otp?.length === 6) {
@@ -52,14 +55,17 @@ function RenderVerifyOtp() {
         .then((confirmationResult) => {
           console.log("OTP sent", confirmationResult?.verificationId);
           setLoading(false);
+          notify("OTP sent successfully", "success");
         })
         .catch((error) => {
           console.error("OTP failed", error);
           setLoading(false);
+          notify("OTP failed", "error");
         });
     } catch (e) {
       console.error(e);
       setLoading(false);
+      notify("OTP failed", "error");
     }
   };
 
@@ -74,22 +80,26 @@ function RenderVerifyOtp() {
           setToken(userCredential.user.getIdToken());
           console.log("OTP verified", userCredential.user);
           setLoading(false);
+          notify("OTP verified successfully", "success");
           navigate(ROUTES.ADD_NAME);
         })
         .catch((error) => {
           console.error("OTP verification failed", error);
           setLoading(false);
+          notify("OTP verification failed", "error");
         });
     } catch (e) {
       console.error(e);
       setLoading(false);
+      notify("OTP verification failed", "error");
     }
   }
 
   return loading ? (
-    <CustomSpinner loading={loading} />
+    <CustomSpinner loading={loading} helperText={"Verifying OTP..."} />
   ) : (
     <>
+      <Toaster position="top-center" />
       <div className="verify-otp-container">
         <div className="verify-otp-container__header-section">
           <h1 className="primary-header">Enter code</h1>
