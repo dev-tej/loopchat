@@ -53,19 +53,19 @@ function RenderVerifyOtp() {
       let formattedNumber = `+91${number}`;
       signInWithPhoneNumber(auth, formattedNumber, verifier)
         .then((confirmationResult) => {
+          notify("OTP sent successfully", "success");
           console.log("OTP sent", confirmationResult?.verificationId);
           setLoading(false);
-          notify("OTP sent successfully", "success");
         })
         .catch((error) => {
+          notify("OTP failed", "error");
           console.error("OTP failed", error);
           setLoading(false);
-          notify("OTP failed", "error");
         });
     } catch (e) {
+      notify("OTP failed", "error");
       console.error(e);
       setLoading(false);
-      notify("OTP failed", "error");
     }
   };
 
@@ -78,20 +78,20 @@ function RenderVerifyOtp() {
         .then((userCredential) => {
           setUser(userCredential.user);
           setToken(userCredential.user.getIdToken());
+          notify("OTP verified successfully", "success");
           console.log("OTP verified", userCredential.user);
           setLoading(false);
-          notify("OTP verified successfully", "success");
           navigate(ROUTES.ADD_NAME);
         })
         .catch((error) => {
+          notify("OTP verification failed", "error");
           console.error("OTP verification failed", error);
           setLoading(false);
-          notify("OTP verification failed", "error");
         });
     } catch (e) {
+      notify("OTP verification failed", "error");
       console.error(e);
       setLoading(false);
-      notify("OTP verification failed", "error");
     }
   }
 

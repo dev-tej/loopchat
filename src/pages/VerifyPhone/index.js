@@ -43,8 +43,8 @@ function RenderVerifyPhone() {
       signInWithPhoneNumber(auth, formattedNumber, verifier)
         .then((confirmationResult) => {
           console.log("OTP sent", confirmationResult?.verificationId);
-          setLoading(false);
           notify("OTP sent successfully", "success");
+          setLoading(false);
           navigate(ROUTES.VERIFY_OTP, {
             state: {
               verificationId: confirmationResult?.verificationId,
@@ -53,14 +53,14 @@ function RenderVerifyPhone() {
           });
         })
         .catch((error) => {
+          notify("OTP failed", "error");
           console.error("OTP failed", error);
           setLoading(false);
-          notify("OTP failed", "error");
         });
     } catch (e) {
+      notify("OTP failed", "error");
       console.error(e);
       setLoading(false);
-      notify("OTP failed", "error");
     }
   };
 
