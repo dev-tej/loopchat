@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as ROUTES from "constants/routes";
+import * as UROUTES from "constants/unAuthenticatedRoutes";
+import * as AROUTES from "constants/authenticatedRoutes";
 import CustomButton from "components/CustomButton";
 import BackArrow from "assets/Profile/BackArrow.svg";
 import CameraIcon from "assets/Profile/Camera.svg";
@@ -15,7 +16,7 @@ function UploadProfilePic() {
     <>
       <div className="profile-default-container">
         <div className="profile-secondary-stepper-section">
-          <img src={BackArrow} alt="back-arrow" onClick={() => navigate(ROUTES.ADD_NAME)} />
+          <img src={BackArrow} alt="back-arrow" onClick={() => navigate(UROUTES.ADD_NAME)} />
           <h3>2 of 2</h3>
         </div>
         <div className="profile-default-container__header-section">
@@ -25,13 +26,27 @@ function UploadProfilePic() {
         <div className="profile-default-container__form-section">
           <div className="profile-pic-upload-container">
             <label htmlFor="profile-pic">
-              <img src={profilePic ? profilePic : CameraIcon} alt="profile-pic" className={profilePic ? "profile-pic" : "camera-pic"} />
+              <img
+                src={profilePic ? profilePic : CameraIcon}
+                alt="profile-pic"
+                className={profilePic ? "profile-pic" : "camera-pic"}
+              />
             </label>
-            <input type="file" id="profile-pic" accept="image/*" style={{ visibility: "hidden" }} onChange={(e) => setProfilePic(URL.createObjectURL(e.target.files[0]))} />
+            <input
+              type="file"
+              id="profile-pic"
+              accept="image/*"
+              style={{ visibility: "hidden" }}
+              onChange={(e) => setProfilePic(URL.createObjectURL(e.target.files[0]))}
+            />
           </div>
         </div>
       </div>
-      <CustomButton text={"Next"} onClick={() => navigate(ROUTES.MESSAGES)} disabled={profilePic === null} />
+      <CustomButton
+        text={"Next"}
+        onClick={() => navigate(AROUTES.BASE)}
+        disabled={profilePic === null}
+      />
     </>
   );
 }

@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { PhoneAuthProvider, signInWithCredential, signInWithPhoneNumber } from "firebase/auth";
 import OtpInput from "react-otp-input";
 import { Toaster } from "react-hot-toast";
-import * as ROUTES from "constants/routes";
+import * as ROUTES from "constants/unAuthenticatedRoutes";
 import { auth, initializeRecaptchaVerifier } from "services/firebase";
-import useAuth from "hooks/useAuth";
+import { useAuth } from "hooks/useAuth";
 import useToast from "hooks/useToast";
 import { getMaskedPhoneNumber } from "utils";
 import CustomSpinner from "components/CustomSpinner";
@@ -109,7 +109,15 @@ function RenderVerifyOtp() {
           </h3>
         </div>
         <div className="verify-otp-container__otp-section">
-          <OtpInput value={otp} onChange={setOtp} numInputs={6} renderSeparator={<span>&nbsp;</span>} renderInput={(props) => <input {...props} type="text" inputMode="numeric" pattern="[0-9]*" />} />
+          <OtpInput
+            value={otp}
+            onChange={setOtp}
+            numInputs={6}
+            renderSeparator={<span>&nbsp;</span>}
+            renderInput={(props) => (
+              <input {...props} type="text" inputMode="numeric" pattern="[0-9]*" />
+            )}
+          />
         </div>
       </div>
       <div className="verify-otp__resend-code-container">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as ROUTES from "constants/routes";
+import * as ROUTES from "constants/unAuthenticatedRoutes";
 import CustomButton from "components/CustomButton";
 import CustomInput from "components/CustomInput";
 import { ReactComponent as UserIcon } from "assets/Profile/User.svg";
@@ -28,7 +28,11 @@ function AddName() {
           <CustomInput icon={UserIcon} initialValue={""} onInputChange={handleNameChange} />
         </div>
       </div>
-      <CustomButton onClick={() => navigate(ROUTES.UPLOAD_PROFILE_PIC)} text={"Continue"} disabled={name?.length === 0} />
+      <CustomButton
+        onClick={() => navigate(ROUTES.UPLOAD_PROFILE_PIC)}
+        text={"Continue"}
+        disabled={name?.length === 0}
+      />
     </>
   );
 }

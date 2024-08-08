@@ -66,5 +66,6 @@
 .profile-pic {
   width: 140px;
   height: 140px;
+  margin-top: 24px;
   border-radius: 50%;
 }

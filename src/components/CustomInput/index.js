@@ -13,7 +13,13 @@ const CustomInput = ({ icon: Icon, placeholder, initialValue, onInputChange, ...
   return (
     <div className="input-container">
       {Icon && <Icon className="icon" />}
-      <input type="text" placeholder={placeholder} {...inputProps} {...rest} className={Icon ? "custom-input-with-icon" : "custom-input"} />
+      <input
+        type="text"
+        placeholder={placeholder}
+        {...inputProps}
+        {...rest}
+        className={Icon ? "custom-input-with-icon" : "custom-input"}
+      />
     </div>
   );
 };
